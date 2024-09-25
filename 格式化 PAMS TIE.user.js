@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         格式化 PAMS TIE
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.3
 // @description  格式化光纜 TIE 跳接箱芯線收容列印為公館機房樣式
 //               (機房 TIE 管理系統 => 右上角標籤列印 => OLDF標籤)
 //               ※0.3版僅匹配橫向每24格一列。
