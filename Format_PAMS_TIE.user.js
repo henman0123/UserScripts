@@ -7,8 +7,8 @@
 //               ※0.3版僅匹配橫向每24格一列。
 // @match        https://web.pams.cht.com.tw/sys/innerTie/form_OLDFtag_3*
 // @icon         https://web-eshop.cdn.hinet.net/eshop/img/favicon.ico
-// @updateURL    https://github.com/henman0123/UserScripts/raw/refs/heads/main/%E6%A0%BC%E5%BC%8F%E5%8C%96%20PAMS%20TIE-0.3.user.js
-// @downloadURL  https://github.com/henman0123/UserScripts/raw/refs/heads/main/%E6%A0%BC%E5%BC%8F%E5%8C%96%20PAMS%20TIE-0.3.user.js
+// @updateURL    https://github.com/henman0123/UserScripts/raw/refs/heads/main/Format_PAMS_TIE.user.js
+// @downloadURL  https://github.com/henman0123/UserScripts/raw/refs/heads/main/Format_PAMS_TIE.user.js
 // @grant        none
 // ==/UserScript==
 
