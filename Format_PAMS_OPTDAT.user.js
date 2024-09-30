@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         格式化 PAMS 光纜心線
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  格式化光纜心線收容列印為公館機房樣式，並防止表格自動伸縮
 // @match        https://web.pams.cht.com.tw/sys/OPTDAT/form_OLDFtag_3*
 // @icon         https://web-eshop.cdn.hinet.net/eshop/img/favicon.ico
@@ -29,9 +29,9 @@
 
         Array.from(remainingTDs).forEach(td => {
            // 重寫所有 height = "20%" <td> 的 min-width 和 height
-           // 寫法很髒但有用
+           // 方法很不優雅但有用
            if (td.getAttribute('height') === '20%') {
-               td.style.minWidth = '50px';
+               td.style.minWidth = '65px';
                td.style.height = '100px';
            }
 
