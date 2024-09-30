@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         格式化 PAMS TIE
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  格式化光纜 TIE 跳接箱芯線收容列印為公館機房樣式
 //               (機房 TIE 管理系統 => 右上角標籤列印 => OLDF標籤)
-//               ※0.3版僅匹配橫向每24格一列。
+//               ※目前版本僅匹配橫向 n 格一列。
 // @match        https://web.pams.cht.com.tw/sys/innerTie/form_OLDFtag_3*
 // @icon         https://web-eshop.cdn.hinet.net/eshop/img/favicon.ico
 // @updateURL    https://github.com/henman0123/UserScripts/raw/refs/heads/main/Format_PAMS_TIE.user.js
@@ -48,8 +48,14 @@
                 td.textContent = td.textContent.replace(/專線/g, '');
             }
 
-            // 為每個 <td> 元素添加 align="middle" 屬性，讓內容垂直居中
+            // 如果 <td> 內容包含 "FTTB"，則將其替換為空白
+            if (td.textContent.includes('FTTB')) {
+                td.textContent = td.textContent.replace(/FTTB/g, '');
+            }
+
+            // 為每個 <td> 元素添加 align="middle" 屬性，讓內容垂直居中並設定字體大小為 16px
             td.setAttribute('align', 'middle');
+            td.style.fontSize = '16px';
 
             // 獲取當前 <td> 的高度
             let currentHeight = td.offsetHeight;
@@ -59,10 +65,30 @@
                 td.style.height = '124px';
             }
 
-            // 特殊處理: 如果 <td> 內容包含 "謝謝合作"，將該 <td> 的高度設置為 12px
+            //保留用
+            /* 特殊處理: 如果 <td> 內容包含 "謝謝合作"，將該 <td> 的高度設置為 12px
             if (td.textContent.includes('謝謝合作')) {
                 td.style.height = '12px';
             }
+            */
+
+            // 特殊處理：為所有 <font class="sys"> 標籤設置字體大小
+            let sysFonts = document.querySelectorAll('font.sys');
+            sysFonts.forEach(font => {
+                font.style.fontSize = '16px';
+            });
+
+            // 特殊處理：移除包含 "謝謝合作" 且寬度 > 1000px 的 tr 標籤
+            allTRs = document.getElementsByTagName('tr'); // 重新獲取 <tr>
+            trArray = Array.from(allTRs);
+
+            trArray.forEach(tr => {
+                if (tr.textContent.includes('謝謝合作') && tr.offsetWidth > 1000) {
+                    tr.parentNode.removeChild(tr);
+                }
+
+
+            });
         });
     }
 
