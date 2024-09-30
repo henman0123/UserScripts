@@ -5,8 +5,8 @@
 // @description  格式化光纜心線收容列印為公館機房樣式，並防止表格自動伸縮
 // @match        https://web.pams.cht.com.tw/sys/OPTDAT/form_OLDFtag_3*
 // @icon         https://web-eshop.cdn.hinet.net/eshop/img/favicon.ico
-// @updateURL    https://github.com/henman0123/UserScripts/raw/refs/heads/main/Format_PAMS_IE.user.js
-// @downloadURL  https://github.com/henman0123/UserScripts/raw/refs/heads/main/Format_PAMS_TI.user.js
+// @updateURL    https://github.com/henman0123/UserScripts/raw/refs/heads/main/Format_PAMS_OPTDAT.user.js
+// @downloadURL  https://github.com/henman0123/UserScripts/raw/refs/heads/main/Format_PAMS_OPTDAT.user.js
 // ==/UserScript==
 
 (function() {
