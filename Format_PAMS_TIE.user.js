@@ -5,6 +5,7 @@
 // @description  格式化光纜 TIE 跳接箱芯線收容列印為公館機房樣式
 //               (機房 TIE 管理系統 => 右上角標籤列印 => OLDF標籤)
 //               ※目前版本僅匹配橫向 n 格一列。
+// @author       noi
 // @match        https://web.pams.cht.com.tw/sys/innerTie/form_OLDFtag_3*
 // @icon         https://web-eshop.cdn.hinet.net/eshop/img/favicon.ico
 // @updateURL    https://github.com/henman0123/UserScripts/raw/refs/heads/main/Format_PAMS_TIE.user.js
