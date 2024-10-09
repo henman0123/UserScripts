@@ -137,7 +137,7 @@
 
                   // 收集原始內容
         let contents = [];
-        for (let row = 1; row <= 4; row++) {
+        for (let row = 1; row <= 5; row++) {
             if (oldTable.rows[row]) {
                 let rowContents = [];
                 for (let i = 0; i < oldTable.rows[row].cells.length; i++) {
