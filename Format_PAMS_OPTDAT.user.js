@@ -3,8 +3,8 @@
 // @namespace    http://tampermonkey.net/
 // @version      3.1
 // @description  格式化光纜心線收容列印為公館機房樣式，並防止表格自動伸縮
-//               ※1.0 版全雙芯表格可用 (以 TCKK-TCK2-FIB-3 為例)，單芯、雙芯混雜表格待完善。
-//               ※2.0 版全雙芯表格可用 (以 TCKK-TCK2-FIB-3 為例)，單芯、雙芯混雜表格可用 (以 TCKK-TCKK-F01 為例)。
+//               ※1.0 版 96 芯全雙芯表格可用 (以 TCKK-TCK2-FIB-3 為例)，單芯、雙芯混雜表格待完善。
+//               ※2.0 版 96 芯全雙芯表格可用 (以 TCKK-TCK2-FIB-3 為例)，單芯、雙芯混雜表格可用 (以 TCKK-TCKK-F01 為例)。
 //               ※3.0 版 96 芯、108 芯、216 芯表格可用。
 // @author       noi
 // @match        https://web.pams.cht.com.tw/sys/OPTDAT/form_OLDFtag_3*
@@ -132,10 +132,10 @@
         innerCell.style.cssText =
           "height: 20%; border-bottom: windowtext 0.5pt solid;";
 
-                  let oldTable = document.querySelector('table.tableR');
+        let oldTable = document.querySelector('table.tableR');
         if (!oldTable) return;
 
-                  // 收集原始內容
+        // 收集原始內容
         let contents = [];
         for (let row = 1; row <= 5; row++) {
             if (oldTable.rows[row]) {
@@ -293,7 +293,7 @@
     let container = oldTables[0].parentNode;
     // 遍歷每個舊表格
     oldTables.forEach((oldTable, index) => {
-      // 計算起始索引（第一個表格從1開始，第二個表格從109開始）
+      // 計算起始索引（第一個表格從 1 開始，第二個表格從 109 開始）
       let startIndex = index === 0 ? 1 : 109;
       // 重構表格，傳入是否為第二個表格的標誌
       let newTable = restructureTable(oldTable, startIndex, index === 1);
@@ -347,7 +347,7 @@
     // 為所有 <font class="sys"> 標籤設置字體大小
     let sysFonts = document.querySelectorAll("font.sys");
     sysFonts.forEach((font) => {
-      font.style.fontSize = "16px";
+      font.style.fontSize = "10px";
     });
 
     // 移除包含 "謝謝合作" 且寬度 > 1000px 的 tr 標籤
